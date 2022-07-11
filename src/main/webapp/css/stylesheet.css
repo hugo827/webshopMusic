@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vh;
+    height: 100vh;
+    background-color: #313030;
+}
+
+.horizontal-navigation {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    z-index: 100;
+    background-color: #5d3c75;
+}
+
+.hn-right {
+    float: right !important;
+    padding: 17.5px;
+}
+
+.vertical-navigation {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    z-index: 100;
+    background-color: #5d3c75;
+}
+
+.logo {
+    margin: 30px;
+    max-width: 80%;
+}
+
+.body-content {
+    position: fixed;
+    margin-top: 60px;
+    margin-left: 250px;
+    width: calc(100% - 250px);
+}
+
+.footer {
+
+}
