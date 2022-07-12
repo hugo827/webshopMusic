@@ -16,7 +16,6 @@ body {
 
 .hn-right {
     float: right !important;
-    padding: 17.5px;
 }
 
 .vertical-navigation {
@@ -41,4 +40,13 @@ body {
 
 .footer {
 
+}
+.language {
+    display: inline-flex;
+    width: 100px;
+    height: 60px;
+}
+.img-language {
+    width: 50px;
+    height: 50px;
 }
