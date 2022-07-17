@@ -13,12 +13,12 @@
 </head>
 <body>
 <div class="login">
-    <form:form method="post" action="" modelAttribute="userModel" cssClass="login-form">
+    <form:form method="post" modelAttribute="userModel" cssClass="login-form">
         <form:label path="username">Username</form:label>
-        <form:input path="username" />
+        <form:input path="username"  required="required" placeholder="Enter username here"/>
         <form:errors path="username" />
         <form:label path="password">Password</form:label>
-        <form:input path="password" />
+        <form:input type="password" path="password" required="required" placeholder="Enter password here"/>
         <form:errors path="password" />
         <form:button>Submit</form:button>
     </form:form>
