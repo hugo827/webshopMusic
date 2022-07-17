@@ -2,3 +2,8 @@ server:
   port: 8082
   servlet:
     contextPath: /wsm
+spring:
+  datasource:
+    password: connect
+    url: jdbc:mysql://localhost:3306/webshopmusicdb?user=dbconnect
+    driverClassName: com.mysql.cj.jdbc.Driver

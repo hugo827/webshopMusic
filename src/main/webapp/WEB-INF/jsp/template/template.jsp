@@ -33,8 +33,8 @@
                     <img class="img-language" alt="en" src='<spring:url value="/image/flagEN.png" />' />
                 </a>
             </div>
-            <button class="btn">Inscription</button>
-            <button class="btn" >Connexion</button>
+            <a href = "<c:url value="/inscription"/>" class="btn"> Inscription</a>
+            <a href = "<c:url value="/login"/>" class="btn"> Login</a>
         </div>
     </div>
     <div class="vertical-navigation">
