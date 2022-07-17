@@ -12,16 +12,19 @@
     <title>Title</title>
 </head>
 <body>
-<div class="login">
+<div class="form">
     <form:form method="post" modelAttribute="userModel" cssClass="login-form">
         <form:label path="username">Username</form:label>
-        <form:input path="username"  required="required" placeholder="Enter username here"/>
+        <form:input path="username" cssClass="login-input" required="required" placeholder="Enter username here"/>
         <form:errors path="username" />
         <form:label path="password">Password</form:label>
-        <form:input type="password" path="password" required="required" placeholder="Enter password here"/>
+        <form:input type="password" cssClass="login-input" path="password" required="required" placeholder="Enter password here"/>
         <form:errors path="password" />
         <form:button>Submit</form:button>
     </form:form>
 </div>
+<p>${
+     userInfo.getUsername()
+}</p>
 </body>
 </html>

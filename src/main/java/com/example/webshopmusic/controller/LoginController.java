@@ -15,4 +15,5 @@ public class LoginController {
         model.addAttribute("userModel", new User());
         return "integrated:login";
     }
+
 }

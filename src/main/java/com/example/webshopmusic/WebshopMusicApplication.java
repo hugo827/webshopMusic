@@ -8,9 +8,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class WebshopMusicApplication {
 
     public static void main(String[] args) {
-        BCryptPasswordEncoder b = new BCryptPasswordEncoder();
-        String p = b.encode("password");
-        System.out.println(p);
         SpringApplication.run(WebshopMusicApplication.class, args);
     }
 

@@ -27,7 +27,9 @@ public class UserDAO implements IUserDataAccess{
 
     @Override
     public User save(User user) {
-        return null;
+        UserEntity userEntity = providerConverter.userModelToUserEntity(user);
+        userEntity = iUserRepository.save(userEntity);
+        return providerConverter.userEntityToUserModel(userEntity);
     }
 
     @Override

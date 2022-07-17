@@ -52,7 +52,7 @@ body {
 }
 
 
-.login {
+.form {
     height: 500px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
@@ -63,13 +63,14 @@ body {
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
 }
+
 .login-form label{
     display: block;
     margin-top: 30px;
     font-size: 16px;
     font-weight: 500;
 }
-.login-form  input{
+.login-input {
     display: block;
     height: 50px;
     width: 100%;
@@ -81,7 +82,7 @@ body {
     font-weight: 300;
 }
 
-.login-form button {
+.form button {
     margin-top: 50px;
     width: 100%;
     background-color: #ffffff;
@@ -91,4 +92,24 @@ body {
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.registration-form {
+    padding: 25px;
+}
+
+.registration-under {
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 100px calc(100% - 90px);
+}
+
+.registration-under label {
+    /*display: inline;*/
+}
+
+
+.registration-beside {
+    display: grid;
+    grid-template-columns: 50px 130px 50px 130px;
 }

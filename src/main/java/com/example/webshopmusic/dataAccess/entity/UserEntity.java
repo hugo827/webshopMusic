@@ -1,9 +1,6 @@
 package com.example.webshopmusic.dataAccess.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="customer")
@@ -11,6 +8,7 @@ public class UserEntity {
 
     @Id
     @Column(name="id_customer")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     @Column(name="username")
     private String username;
@@ -25,7 +23,7 @@ public class UserEntity {
     @Column(name="password")
     private String password;
     @Column(name="postcode")
-    private Integer postcode;
+    private int postcode;
     @Column(name="country")
     private String country;
     @Column(name="city")
@@ -104,11 +102,11 @@ public class UserEntity {
         this.password = password;
     }
 
-    public Integer getPostcode() {
+    public int getPostcode() {
         return postcode;
     }
 
-    public void setPostcode(Integer postcode) {
+    public void setPostcode(int postcode) {
         this.postcode = postcode;
     }
 
