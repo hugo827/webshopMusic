@@ -40,6 +40,7 @@ public class InscriptionController {
 
     @RequestMapping(value = "/send", method = RequestMethod.POST)
     public String post(Model model, @Valid @ModelAttribute(value = Constante.CURRENT_USER)  User user, final BindingResult bindingResult) {
+        //TODO: a voir --> pas correct
         user.setAuthorities("ROLE_USER");
         user.setAccountNonExpired(true);
         user.setAccountNonLocked(true);

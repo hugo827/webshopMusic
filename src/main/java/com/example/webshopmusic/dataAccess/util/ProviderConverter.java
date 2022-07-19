@@ -1,6 +1,8 @@
 package com.example.webshopmusic.dataAccess.util;
 
+import com.example.webshopmusic.dataAccess.entity.TCategoryEntity;
 import com.example.webshopmusic.dataAccess.entity.UserEntity;
+import com.example.webshopmusic.model.Tcategory;
 import com.example.webshopmusic.model.User;
 import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
@@ -31,4 +33,13 @@ public class ProviderConverter {
         userEntity.setAuthorities(user.getAuthorities().toString());
         return userEntity;
     }
+
+    public TCategoryEntity tCategoryModelToTCategoryEntity(Tcategory tcategory) {
+        return mapper.map(tcategory, TCategoryEntity.class);
+    }
+
+    public Tcategory tcategoryEntityToTCategoryModel(TCategoryEntity tcategoryEntity) {
+        return mapper.map(tcategoryEntity, Tcategory.class);
+    }
+
 }

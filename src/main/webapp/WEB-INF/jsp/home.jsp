@@ -14,8 +14,8 @@
 <body>
     <p><spring:message code="welcomeLabel" /></p>
     <c:forEach items="${users}" var="u" >
-        <p>${u.getUsername()} - ${u.getPassword()} - ${u.getAuthorities()}</p>
+        <p>${u.getName()}</p>
     </c:forEach>
-    <p>${userName}</p>
+
 </body>
 </html>
