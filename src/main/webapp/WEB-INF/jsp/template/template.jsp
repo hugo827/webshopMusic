@@ -40,6 +40,7 @@
     <div class="vertical-navigation">
         <image class="logo" src="<spring:url value='/image/logo.svg' />" />
         <!-- boucle sur les categories -->
+
     </div>
 </div>
 <div class="body-content">

@@ -15,14 +15,14 @@ public class HomeController {
     private ITCategoryDataAccess tcategoryDAO;
 
     @Autowired
-    public HomeController(IUserDataAccess iUserDataAccess, ITCategoryDataAccess itCategoryDataAccess) {
+    public HomeController(ITCategoryDataAccess itCategoryDataAccess) {
         this.tcategoryDAO = itCategoryDataAccess;
     }
 
     @RequestMapping(method=RequestMethod.GET)
     public String home (Model model) {
         model.addAttribute("title", "Home Page");
-        model.addAttribute("users", tcategoryDAO.getListTCategory("fr") );
+        model.addAttribute("listCategories", tcategoryDAO.getListTCategory("fr") );
         return "integrated:home";
     }
 }

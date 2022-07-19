@@ -26,8 +26,8 @@ public class TCategoryDAO implements ITCategoryDataAccess {
 
 
     @Override
-    public ArrayList<Tcategory> getListTCategory(String language) {
-        List<TCategoryEntity> tCategoryEntities = itCategoryRepository.findTCategoryEntitiesByFk_languageEquals(language);
+    public ArrayList<Tcategory> getListTCategory(String language_code) {
+        List<TCategoryEntity> tCategoryEntities = itCategoryRepository.findTCategoryEntitiesByFkLanguageEquals(language_code);
         ArrayList<Tcategory> tcategories = new ArrayList<>();
         for(TCategoryEntity tCategoryEntity : tCategoryEntities) {
             tcategories.add(providerConverter.tcategoryEntityToTCategoryModel(tCategoryEntity));

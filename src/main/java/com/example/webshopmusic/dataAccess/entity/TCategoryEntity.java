@@ -14,13 +14,11 @@ public class TCategoryEntity {
     @Column(name="name")
     private String name;
 
-    @JoinColumn(name="fk_category", referencedColumnName = "id_category")
-    @ManyToOne
-    private CategoryEntity fk_category;
+    @Column(name="fk_category")
+    private String fkCategory;
 
-    @JoinColumn(name="fk_language", referencedColumnName = "id_language")
-    @ManyToOne
-    private LanguageEntity fk_language;
+    @Column(name="fk_language")
+    private String fkLanguage;
 
     public TCategoryEntity() {
     }
@@ -41,19 +39,19 @@ public class TCategoryEntity {
         this.name = name;
     }
 
-    public CategoryEntity getFk_category() {
-        return fk_category;
+    public String getFk_category() {
+        return fkCategory;
     }
 
-    public void setFk_category(CategoryEntity fk_category) {
-        this.fk_category = fk_category;
+    public void setFk_category(String fk_category) {
+        this.fkCategory = fk_category;
     }
 
-    public LanguageEntity getFk_language() {
-        return fk_language;
+    public String getFk_language() {
+        return fkLanguage;
     }
 
-    public void setFk_language(LanguageEntity fk_language) {
-        this.fk_language = fk_language;
+    public void setFk_language(String fk_language) {
+        this.fkLanguage = fk_language;
     }
 }

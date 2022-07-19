@@ -13,9 +13,11 @@
 </head>
 <body>
     <p><spring:message code="welcomeLabel" /></p>
-    <c:forEach items="${users}" var="u" >
-        <p>${u.getName()}</p>
-    </c:forEach>
-
+    <ul>
+        <li><a href="#"> All </a></li>
+        <c:forEach items="${users}" var="u" >
+            <li><a href="#"> ${u.getName()}</a></li>
+        </c:forEach>
+    </ul>
 </body>
 </html>
