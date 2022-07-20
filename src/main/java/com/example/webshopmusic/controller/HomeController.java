@@ -1,12 +1,10 @@
 package com.example.webshopmusic.controller;
 
 import com.example.webshopmusic.dataAccess.dao.ITCategoryDataAccess;
-import com.example.webshopmusic.dataAccess.dao.IUserDataAccess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping(value= "/home")
@@ -20,9 +18,10 @@ public class HomeController {
     }
 
     @RequestMapping(method=RequestMethod.GET)
-    public String home (Model model) {
+    public String home (Model model,@RequestParam(value = "locale", required = false) String param, @CookieValue(value = "localeCookie", defaultValue = "en") String cookie) {
         model.addAttribute("title", "Home Page");
-        model.addAttribute("listCategories", tcategoryDAO.getListTCategory("fr") );
+        param = param == null ? "en" : param;
+        model.addAttribute("listCategories", tcategoryDAO.getListTCategory(param) );
         return "integrated:home";
     }
 }

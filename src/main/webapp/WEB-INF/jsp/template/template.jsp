@@ -24,6 +24,13 @@
 <body>
 <div>
     <div class="horizontal-navigation">
+        <div class="hn-left">
+            <a href="<c:url value='/home' />"><image class="logo" src="<spring:url value='/image/logo.svg' />" /></a>
+             <div class="div-name-website"><a href="<c:url value='/home' />" class="name-website">WebShop Music</a></div>
+        </div>
+        <div class="hn-center">
+
+        </div>
         <div class="hn-right">
             <div class="language">
                 <a href="${localeFR}" >
@@ -37,12 +44,8 @@
             <a href = "<c:url value="/login"/>" class="btn"> Login</a>
         </div>
     </div>
-    <div class="vertical-navigation">
-        <image class="logo" src="<spring:url value='/image/logo.svg' />" />
-        <!-- boucle sur les categories -->
-
-    </div>
 </div>
+
 <div class="body-content">
     <tiles:insertAttribute name="main-content" />
 </div>

@@ -12,12 +12,14 @@
     <title>Title</title>
 </head>
 <body>
-    <p><spring:message code="welcomeLabel" /></p>
-    <ul>
-        <li><a href="#"> All </a></li>
-        <c:forEach items="${users}" var="u" >
-            <li><a href="#"> ${u.getName()}</a></li>
+
+    <div class="categories">
+        <a href="#" class="category">All</a>
+        <c:forEach items="${listCategories}" var="u" >
+            <a href="#" class="category">${u.getName()}</a>
         </c:forEach>
-    </ul>
+    </div>
+
+
 </body>
 </html>

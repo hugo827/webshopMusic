@@ -59,6 +59,8 @@
         </div>
         <form:button>Submit</form:button>
     </form:form>
+    <a href="<c:url value='/login' />">Sign In</a>
+    <a href="<c:url value='/home' />">Cancel</a>
 </div>
 </body>
 </html>
