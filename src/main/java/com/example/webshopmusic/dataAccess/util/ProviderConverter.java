@@ -1,8 +1,10 @@
 package com.example.webshopmusic.dataAccess.util;
 
+import com.example.webshopmusic.dataAccess.entity.BrandEntity;
 import com.example.webshopmusic.dataAccess.entity.InstrumentEntity;
 import com.example.webshopmusic.dataAccess.entity.TCategoryEntity;
 import com.example.webshopmusic.dataAccess.entity.UserEntity;
+import com.example.webshopmusic.model.Brand;
 import com.example.webshopmusic.model.Instrument;
 import com.example.webshopmusic.model.Tcategory;
 import com.example.webshopmusic.model.User;
@@ -49,6 +51,12 @@ public class ProviderConverter {
     }
 
     public Instrument instrumentEntityToInstrumentModel(InstrumentEntity instrumentEntity) {
-        return  mapper.map(instrumentEntity, Instrument.class);
+        Instrument instrument = mapper.map(instrumentEntity, Instrument.class);
+        instrument.setBrand(brandEntityToBrandModel(instrumentEntity.getFkBrand()));
+        return  instrument;
+    }
+
+    private Brand brandEntityToBrandModel(BrandEntity brandEntity) {
+        return mapper.map(brandEntity, Brand.class);
     }
 }

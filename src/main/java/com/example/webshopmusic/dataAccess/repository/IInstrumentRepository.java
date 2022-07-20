@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IInstrumentRepository extends JpaRepository<InstrumentEntity, Integer> {
+
+    InstrumentEntity findById(int id);
 }

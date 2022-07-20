@@ -188,9 +188,83 @@ body {
     margin: 0 auto;
 }
 
+.product-show-brand {
+    padding: 0 0;
+    margin: 0 auto;
+}
+
 .product-list-a {
     text-decoration: none;
     color: white;
 }
 
+.product-page {
+    margin: 8% auto;
+    width: 70%;
+    display: flex;
+}
 
+.product-page-left {
+    width: 70%;
+}
+.product-page-left-top {
+    display: flex;
+}
+
+.product-page-left-top-image {
+    padding: 3%;
+}
+
+.product-page-left-top-info {
+    margin-top: 3%;
+    display: grid;
+    grid-template-columns: 1fr
+}
+
+.product-page-right {
+    width: 25%;
+    margin: auto auto;
+}
+
+.product-page-left-bottom h3 {
+    text-decoration: underline;
+}
+
+.product-page-right input {
+
+}
+
+.product-page-add-btn {
+    background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
+    border-radius: 40px;
+    box-sizing: border-box;
+    color: #00a84f;
+    display: block;
+    height: 50px;
+    font-size: 1.4em;
+    padding: 4px;
+    position: relative;
+    text-decoration: none;
+    width: 7em;
+    z-index: 2;
+    margin: 15px auto;
+}
+
+.product-page-add-btn:hover {
+    color: #fff;
+}
+
+.product-page-add-btn .product-page-add-btn-span {
+    align-items: center;
+    background: #0e0e10;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition: background 0.5s ease;
+    width: 100%;
+}
+
+.product-page-add-btn:hover .product-page-add-btn-span {
+    background: transparent;
+}

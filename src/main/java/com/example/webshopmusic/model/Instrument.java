@@ -7,7 +7,8 @@ public class Instrument {
     private String description;
     private double price;
     private String fkCategory;
-    private int fkBrand;
+
+    private Brand brand;
 
     public Instrument() {
     }
@@ -52,11 +53,11 @@ public class Instrument {
         this.fkCategory = fkCategory;
     }
 
-    public int getFkBrand() {
-        return fkBrand;
+    public Brand getBrand() {
+        return brand;
     }
 
-    public void setFkBrand(int fkBrand) {
-        this.fkBrand = fkBrand;
+    public void setBrand(Brand brand) {
+        this.brand = brand;
     }
 }

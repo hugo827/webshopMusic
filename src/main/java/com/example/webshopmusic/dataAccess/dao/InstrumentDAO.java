@@ -33,4 +33,10 @@ public class InstrumentDAO implements IInstrumentDataAccess {
         }
         return instruments;
     }
+
+    @Override
+    public Instrument getInstrument(int idProduct) {
+        InstrumentEntity instrumentEntity = iInstrumentRepository.findById(idProduct);
+        return instrumentEntity == null ? null : providerConverter.instrumentEntityToInstrumentModel(instrumentEntity);
+    }
 }

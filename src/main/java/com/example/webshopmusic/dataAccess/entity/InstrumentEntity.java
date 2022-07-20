@@ -18,8 +18,9 @@ public class InstrumentEntity {
     private double price;
     @Column(name="fk_category")
     private String fkCategory;
-    @Column(name="fk_brand")
-    private int fkBrand;
+    @JoinColumn(name="fk_brand", referencedColumnName="id_brand")
+    @ManyToOne
+    private BrandEntity fkBrand;
 
     public InstrumentEntity() {
     }
@@ -64,11 +65,11 @@ public class InstrumentEntity {
         this.fkCategory = fkCategory;
     }
 
-    public int getFkBrand() {
+    public BrandEntity getFkBrand() {
         return fkBrand;
     }
 
-    public void setFkBrand(int fkBrand) {
+    public void setFkBrand(BrandEntity fkBrand) {
         this.fkBrand = fkBrand;
     }
 }

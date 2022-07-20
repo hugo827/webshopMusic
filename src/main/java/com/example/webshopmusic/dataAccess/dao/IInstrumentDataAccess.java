@@ -7,4 +7,5 @@ import java.util.ArrayList;
 public interface IInstrumentDataAccess {
 
     ArrayList<Instrument> getInstrumentsList();
+    Instrument getInstrument(int idProduct);
 }
