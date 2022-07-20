@@ -19,7 +19,18 @@
             <a href="#" class="category">${u.getName()}</a>
         </c:forEach>
     </div>
+    <div class="product-list">
+        <c:forEach items="${listInstruments}" var="var" >
+            <a href="#" class="product-list-a">
+                <div class="product-show">
+                    <image class="product-show-image" src="<spring:url value='/image/default.png' />" />
+                    <span class="product-show-name"> ${var.getName()}</span>
+                    <span class="product-show-price"> ${var.getPrice()} €</span>
+                </div>
+            </a>
+        </c:forEach>
 
+    </div>
 
 </body>
 </html>

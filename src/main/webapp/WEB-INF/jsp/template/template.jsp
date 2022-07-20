@@ -22,8 +22,7 @@
     </spring:url>
 </head>
 <body>
-<div>
-    <div class="horizontal-navigation">
+<div class="horizontal-navigation">
         <div class="hn-left">
             <a href="<c:url value='/home' />"><image class="logo" src="<spring:url value='/image/logo.svg' />" /></a>
              <div class="div-name-website"><a href="<c:url value='/home' />" class="name-website">WebShop Music</a></div>
@@ -43,8 +42,8 @@
             <a href = "<c:url value="/inscription"/>" class="btn"> Inscription</a>
             <a href = "<c:url value="/login"/>" class="btn"> Login</a>
         </div>
-    </div>
 </div>
+
 
 <div class="body-content">
     <tiles:insertAttribute name="main-content" />

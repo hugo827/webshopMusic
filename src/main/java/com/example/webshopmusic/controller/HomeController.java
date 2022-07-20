@@ -1,5 +1,6 @@
 package com.example.webshopmusic.controller;
 
+import com.example.webshopmusic.dataAccess.dao.IInstrumentDataAccess;
 import com.example.webshopmusic.dataAccess.dao.ITCategoryDataAccess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,10 +12,12 @@ import org.springframework.web.bind.annotation.*;
 public class HomeController {
 
     private ITCategoryDataAccess tcategoryDAO;
+    private IInstrumentDataAccess iInstrumentDAO;
 
     @Autowired
-    public HomeController(ITCategoryDataAccess itCategoryDataAccess) {
+    public HomeController(ITCategoryDataAccess itCategoryDataAccess, IInstrumentDataAccess iInstrumentDAO) {
         this.tcategoryDAO = itCategoryDataAccess;
+        this.iInstrumentDAO = iInstrumentDAO;
     }
 
     @RequestMapping(method=RequestMethod.GET)
@@ -22,6 +25,7 @@ public class HomeController {
         model.addAttribute("title", "Home Page");
         param = param == null ? "en" : param;
         model.addAttribute("listCategories", tcategoryDAO.getListTCategory(param) );
+        model.addAttribute("listInstruments", iInstrumentDAO.getInstrumentsList() );
         return "integrated:home";
     }
 }
