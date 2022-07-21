@@ -14,7 +14,25 @@
 <body>
     <div class="cart">
         <div class="cart-line">
-
+            <c:forEach items="${cartList}" var="c" >
+                <div class="cart-line-item">
+                    <image class="cart-line-item-image" src="<spring:url value='/image/default.png' />" />
+                    <div class="cart-line-item-info">
+                        <p>${c.getValue().getInstrument().getName()}</p>
+                        <p>Categorie :${c.getValue().getInstrument().getFkCategory()}</p>
+                        <p>Marque : ${c.getValue().getInstrument().getBrand().getName()}</p>
+                        <div class="cart-line-item-btn">
+                            <div class="cart-line-item-btn-details">
+                                <a class="product-page-add-btn" href="<c:url value="/product/${c.getKey()}" />"><span class="product-page-add-btn-span">More details</span></a>
+                            </div>
+                            <div class="cart-line-item-btn-quantity">
+                                     <span>Quantity : ${c.getValue().getQuantity()}</span>
+                                    <a class="product-page-add-btn" href="<c:url value="/product/${c.getKey()}" />"><span class="product-page-add-btn-span">Update quantity</span></a>
+                               </div>
+                           </div>
+                    </div>
+                </div>
+            </c:forEach>
         </div>
         <div class="cart-paid">
             <h3>Details :</h3>

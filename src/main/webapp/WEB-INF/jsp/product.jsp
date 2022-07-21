@@ -32,8 +32,13 @@
             </div>
         </div>
         <div class="product-page-right">
-            <input placeholder="Enter number product"/>
-            <a class="product-page-add-btn" href="/"><span class="product-page-add-btn-span">Add product</span></a>
+            <form:form method="post" modelAttribute="productAdd" action="/wsm/product/send">
+                <form:label path="quantity">Quantity</form:label>
+                <form:input path="quantity" required="required" value="1"/>
+                <form:button>Add product</form:button>
+               <!-- <a class="product-page-add-btn" href="/"><span class="product-page-add-btn-span">Add product</span></a>
+          -->
+            </form:form>
         </div>
     </div>
 </body>

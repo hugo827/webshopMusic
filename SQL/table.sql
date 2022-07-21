@@ -187,3 +187,8 @@ INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`)
 INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("Gretsch Drums RN2-E8246-STB Renown Satin Tobacco Burst", "",1199.99 , 7, "drum");
 INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("Gretsch Drums G4164 Solid Aluminum Shell", "",859.99 , 7, "drum");
 INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("CATALINA CLUB ROCK PIANO BLACK 24\" ", "",899.99 , 7, "drum");
+
+
+INSERT INTO discount(percentage_discount, start_at, end_at, fk_instrument) VALUES (0.05, "2022-07-20", "2022-12-31", 1);
+INSERT INTO discount(percentage_discount, start_at, end_at, fk_instrument) VALUES (0.10, "2022-07-20", "2022-12-31", 2);
+INSERT INTO discount(percentage_discount, start_at, end_at, fk_instrument) VALUES (0.25, "2022-07-20", "2022-12-31", 3);
