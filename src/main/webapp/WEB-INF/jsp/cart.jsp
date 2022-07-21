@@ -12,6 +12,19 @@
     <title>Title</title>
 </head>
 <body>
+    <div class="cart">
+        <div class="cart-line">
 
+        </div>
+        <div class="cart-paid">
+            <h3>Details :</h3>
+            <ul>
+                <li> Total products : XXX</li>
+                <li> Total price : XXX</li>
+            </ul>
+
+            <a class="product-page-add-btn" href="/"><span class="product-page-add-btn-span">Order</span></a>
+        </div>
+    </div>
 </body>
 </html>

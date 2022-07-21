@@ -25,8 +25,11 @@ public class InstrumentDAO implements IInstrumentDataAccess {
     }
 
     @Override
-    public ArrayList<Instrument> getInstrumentsList() {
-        List<InstrumentEntity> instrumentEntityList = iInstrumentRepository.findAll();
+    public ArrayList<Instrument> getInstrumentsList(String category) {
+        category = category.toLowerCase();
+        List<InstrumentEntity> instrumentEntityList;
+        if(category.equals("all"))instrumentEntityList = iInstrumentRepository.findAll();
+        else instrumentEntityList = iInstrumentRepository.findInstrumentEntitiesByFkCategory(category);
         ArrayList<Instrument> instruments = new ArrayList<>();
         for(InstrumentEntity instrumentEntity : instrumentEntityList) {
             instruments.add(providerConverter.instrumentEntityToInstrumentModel(instrumentEntity));

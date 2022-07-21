@@ -10,13 +10,17 @@
 <html>
 <head>
     <title>Title</title>
+    <spring:url var="categoryAll"  value="">
+        <spring:param name="category" value="all" />
+    </spring:url>
+
 </head>
 <body>
 
     <div class="categories">
-        <a href="#" class="category">All</a>
+        <a href="<c:url value='/home/all'/>" class="category">All</a>
         <c:forEach items="${listCategories}" var="u" >
-            <a href="#" class="category">${u.getName()}</a>
+            <a href="<c:url value='/home/${u.getFk_category().toLowerCase()}'/>" class="category">${u.getName()}</a>
         </c:forEach>
     </div>
     <div class="product-list">

@@ -19,7 +19,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     private static final String LOGIN_REQUEST = "/login";
 
     private static final String LOGOUT_REQUEST = "/home";
-    private static final String[] AUTHORIZED_REQUESTS_ANYBODY = new String[]{"/home", "/css/**","/image/**", "/inscription", "/login", "/inscription/send", "/product/**"};
+    private static final String[] AUTHORIZED_REQUESTS_ANYBODY = new String[]{"/home", "/home/**", "/css/**","/image/**", "/inscription", "/login", "/inscription/send", "/product/**", "/cart"};
     //TODO: a voir si on peut.
     private static final String[] AUTHORIZED_REQUEST_NON_AUTHENTICATED = new String[] { };
     private static final String[] AUTHORIZED_REQUESTS_ADMIN = new String[]{"/admin"};
@@ -54,7 +54,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout() // We define the logout part here - By default : URL = "/logout"
                 //.logoutUrl("...") // If other link than "/logout" (that is by default)
-                .logoutSuccessUrl("/logout")  // URL to return if logout is successfull
+                .logoutSuccessUrl(LOGOUT_REQUEST)  // URL to return if logout is successfull
                 .permitAll(); // To make the logout available for any user
     }
 

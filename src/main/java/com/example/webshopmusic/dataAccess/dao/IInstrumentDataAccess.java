@@ -6,6 +6,6 @@ import java.util.ArrayList;
 
 public interface IInstrumentDataAccess {
 
-    ArrayList<Instrument> getInstrumentsList();
+    ArrayList<Instrument> getInstrumentsList(String category);
     Instrument getInstrument(int idProduct);
 }

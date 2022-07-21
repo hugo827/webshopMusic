@@ -7,7 +7,6 @@
 --%>
 <%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="../include/importTags.jsp" %>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 
 <html>
 <head>
@@ -39,8 +38,15 @@
                     <img class="img-language" alt="en" src='<spring:url value="/image/flagEN.png" />' />
                 </a>
             </div>
+            <a href = "<c:url value="/cart"/>"><image class="logo" src="<spring:url value='/image/shopping-cart.png' />" /></a>
+            <sec:authorize access="!isAuthenticated()">
             <a href = "<c:url value="/inscription"/>" class="btn"> Inscription</a>
             <a href = "<c:url value="/login"/>" class="btn"> Login</a>
+            </sec:authorize>
+            <sec:authorize access="isAuthenticated()">
+                <a href = "<c:url value="/profile"/>" class="btn"> Profile</a>
+                <a href = "<c:url value="/logout"/>" class="btn"> Logout</a>
+            </sec:authorize>
         </div>
 </div>
 

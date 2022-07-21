@@ -70,7 +70,7 @@ CREATE TABLE `instrument` (
 	`id_instrument` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `name` varchar(100) not null unique,
     `description` text,
-    `price` double not null unique,
+    `price` double not null,
     `fk_category` varchar(50) not null,
     `fk_brand` int not null,
     CONSTRAINT `fk_category_in` FOREIGN key (`fk_category`) REFERENCES  `category` (`id_category`),
@@ -164,28 +164,26 @@ INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`)
 INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("PHX", "", 6999.99 , 1, "drum");
 INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("DTX10K-X Real Wood / Black Forest", "", 4599.99 , 1, "drum");
 
-
 -- FENDER --
-INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES (`LIMITED EDITION VINTERA '70S TELECASTER DELUXE, LAKE PLACID BLUE`, "", 1249.99 , 2, "guitar");
-INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES (`JV Modified '60s Stratocaster`, "", 1449.99 , 2, "guitar");
-INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES (`American Acoustasonic Telecaster All-Mahogany`, "", 1999.99 , 2, "guitar");
-INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES (`60th Anniversary Ultra Luxe Jaguar`, "",2899.99 , 2, "guitar");
-INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES (`Contemporary Stratocaster Special HT`, "",499.99 , 2, "guitar");
-INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES (`Contemporary Stratocaster Special`, "",499.99 , 2, "guitar");
-INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES (`Contemporary Telecaster RH`, "",499.99 , 2, "guitar");
-INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES (`Mustang 90`, "",699.99 , 2, "guitar");
+INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("LIMITED EDITION VINTERA '70S TELECASTER DELUXE, LAKE PLACID BLUE", "", 1249.99 , 2, "guitar");
+INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("JV Modified '60s Stratocaster", "", 1449.99 , 2, "guitar");
+INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("American Acoustasonic Telecaster All-Mahogany", "", 1999.99 , 2, "guitar");
+INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("60th Anniversary Ultra Luxe Jaguar", "",2899.99 , 2, "guitar");
+INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("Contemporary Stratocaster Special HT", "",499.99 , 2, "guitar");
+INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("Contemporary Stratocaster Special", "",499.99 , 2, "guitar");
+INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("Contemporary Telecaster RH", "",499.99 , 2, "guitar");
+INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("Mustang 90", "",699.99 , 2, "guitar");
 
-INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES (`Ampli audio - Acoustasonic 15`, "",199.99 , 2, "others");
-INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES (`Ampli audio - Acoustasonic 40`, "",299.99 , 2, "others");
-INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES (`Ampli audio - ’68 Custom Deluxe Reverb`, "",1599.99 , 2, "others");
+INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("Ampli audio - Acoustasonic 15", "",199.99 , 2, "others");
+INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("Ampli audio - Acoustasonic 40", "",299.99 , 2, "others");
+INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("Ampli audio - ’68 Custom Deluxe Reverb", "",1599.99 , 2, "others");
 
 -- Takamine --
-INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES (`Takamine GD30CE12 Natural`, "",444.00 , 3, "guitar");
-INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES (`Takamine GN20CE NS2`, "",389.88 , 3, "guitar");
-INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES (`Takamine EF341SC Black`, "",1199.99 , 3, "guitar");
+INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("Takamine GD30CE12 Natural", "",444.00 , 3, "guitar");
+INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("Takamine GN20CE NS2", "",389.88 , 3, "guitar");
+INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("Takamine EF341SC Black", "",1199.99 , 3, "guitar");
 
 -- Gretsch --
-
-INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES (`Gretsch Drums RN2-E8246-STB Renown Satin Tobacco Burst`, "",1199.99 , 7, "drum");
-INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES (`Gretsch Drums G4164 Solid Aluminum Shell`, "",859.99 , 7, "drum");
-
+INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("Gretsch Drums RN2-E8246-STB Renown Satin Tobacco Burst", "",1199.99 , 7, "drum");
+INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("Gretsch Drums G4164 Solid Aluminum Shell", "",859.99 , 7, "drum");
+INSERT INTO instrument(`name`, `description`,`price`, `fk_brand`, `fk_category`) VALUES ("CATALINA CLUB ROCK PIANO BLACK 24\" ", "",899.99 , 7, "drum");

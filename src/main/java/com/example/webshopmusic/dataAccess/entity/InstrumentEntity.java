@@ -1,6 +1,7 @@
 package com.example.webshopmusic.dataAccess.entity;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name="instrument")
@@ -21,6 +22,12 @@ public class InstrumentEntity {
     @JoinColumn(name="fk_brand", referencedColumnName="id_brand")
     @ManyToOne
     private BrandEntity fkBrand;
+
+    @OneToMany(mappedBy="instrumentDiscount", fetch=FetchType.LAZY)
+    private Collection<DiscountEntity> discounts;
+
+    @OneToMany(mappedBy="instrumentOrderLine", fetch=FetchType.LAZY)
+    private Collection<OrderLineEntity> orderLines;
 
     public InstrumentEntity() {
     }

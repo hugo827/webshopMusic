@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    width: 100%;
     background-color: #313030;
     color: white;
 }
@@ -17,10 +16,12 @@ body {
 
 .hn-right {
     width: 20%;
+    border: 1px solid yellow;
 }
 .hn-left {
     width: 20%;
     display: flex;
+
 }
 .hn-center {
     width: 60%;
@@ -65,14 +66,13 @@ body {
 .logo {
     padding: 0 25px;
     width: 60px;
-    height: 60px;
+    height: 58px;
 }
 
 .body-content {
     padding-top: 60px;
     margin-left: 15%;
     width: 70%;
-    min-height: 100vh;
 }
 
 .footer {
@@ -268,3 +268,62 @@ body {
 .product-page-add-btn:hover .product-page-add-btn-span {
     background: transparent;
 }
+
+.cart {
+    position: fixed;
+    margin-top: 3%;
+    width: 70%;
+    height: 80%;
+    display: flex;
+}
+
+.cart-line {
+    width: 70%;
+    overflow-y: scroll;
+    border: 1px solid green;
+}
+
+.cart-paid {
+    margin-left: 5%;
+    width: 25% ;
+    border: 1px solid yellow;
+}
+
+.cart-paid h3 {
+    text-align: center;
+}
+
+.cart-paid ul {
+    list-style-type: none;
+    font-size: 18px;
+}
+
+.nav {
+    width: 100px;
+    height: 58px;
+}
+
+.menu-deroulant {
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0 0;
+    margin: 0 0;
+    border: 1px solid red;
+}
+
+.deroulant {
+    text-align: center;
+}
+
+.sous {
+    list-style-type: none;
+    color: black;
+    display: none;
+    box-shadow: 0px 1px 2px #ccc;
+    background-color: white;
+}
+
+.menu-deroulant:hover .sous{
+    display: block;
+}
+
