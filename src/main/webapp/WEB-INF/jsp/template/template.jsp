@@ -27,7 +27,10 @@
              <div class="div-name-website"><a href="<c:url value='/home' />" class="name-website">WebShop Music</a></div>
         </div>
         <div class="hn-center">
-
+            <ul>
+                <a href = "<c:url value='/home'/>"> <li>Home</li></a>
+                <a href = "<c:url value='/aboutus'/>"> <li>About us</li></a>
+            </ul>
         </div>
         <div class="hn-right">
             <div class="language">
@@ -44,8 +47,13 @@
             <a href = "<c:url value="/login"/>" class="btn"> Login</a>
             </sec:authorize>
             <sec:authorize access="isAuthenticated()">
-                <a href = "<c:url value="/profile"/>" class="btn"> Profile</a>
-                <a href = "<c:url value="/logout"/>" class="btn"> Logout</a>
+                <div class="connected">
+                    <span>Bonjour ${pageContext.request.userPrincipal.principal.firstname} ${pageContext.request.userPrincipal.principal.lastname}</span>
+                    <div class="connected-btn">
+                        <a href = "<c:url value="/profile"/>" class="btn"> Profile</a>
+                        <a href = "<c:url value="/logout"/>" class="btn"> Logout</a>
+                    </div>
+                </div>
             </sec:authorize>
         </div>
 </div>

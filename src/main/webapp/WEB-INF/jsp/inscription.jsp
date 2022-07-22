@@ -35,7 +35,7 @@
         </div>
         <div class="registration-under">
             <form:label path="phone">Phone</form:label>
-            <form:input path="phone" required="required" placeholder="Enter phone here"/>
+            <form:input path="phone" placeholder="Enter phone here"/>
             <form:errors path="phone" />
         </div>
        <div class="registration-beside">

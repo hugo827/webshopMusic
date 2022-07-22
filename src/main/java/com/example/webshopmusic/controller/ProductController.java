@@ -2,7 +2,6 @@ package com.example.webshopmusic.controller;
 
 import com.example.webshopmusic.ConstanteApp.Constante;
 import com.example.webshopmusic.dataAccess.dao.IInstrumentDataAccess;
-import com.example.webshopmusic.dataAccess.repository.IInstrumentRepository;
 import com.example.webshopmusic.model.CartSession;
 import com.example.webshopmusic.model.Instrument;
 import com.example.webshopmusic.model.ProductAdd;
@@ -12,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 
 @Controller
 @RequestMapping(value= "/product")
