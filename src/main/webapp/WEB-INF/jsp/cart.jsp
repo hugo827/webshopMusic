@@ -47,7 +47,7 @@
                 <li> Total products : ${totalProduct}</li>
                 <li> Total price : ${totalPrice}</li>
             </ul>
-            <a class="product-page-add-btn" href="<c:url value='/cart/order' />"><span class="product-page-add-btn-span">Order</span></a>
+            <a class="product-page-add-btn" href="<c:url value='/order' />"><span class="product-page-add-btn-span">Order</span></a>
         </div>
     </div>
 </body>

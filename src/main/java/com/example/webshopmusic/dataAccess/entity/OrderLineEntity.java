@@ -7,9 +7,9 @@ import javax.persistence.*;
 public class OrderLineEntity {
 
     @Id
-    @Column(name="id_orderlien")
+    @Column(name="id_orderline")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int idOrderLineEntity;
+    private int idOrderline;
 
     @Column(name="price_product")
     private double priceProduct;
@@ -32,12 +32,12 @@ public class OrderLineEntity {
     public OrderLineEntity() {
     }
 
-    public int getIdOrderLineEntity() {
-        return idOrderLineEntity;
+    public int getIdOrderline() {
+        return idOrderline;
     }
 
-    public void setIdOrderLineEntity(int idOrderLineEntity) {
-        this.idOrderLineEntity = idOrderLineEntity;
+    public void setIdOrderline(int idOrderline) {
+        this.idOrderline = idOrderline;
     }
 
     public double getPriceProduct() {

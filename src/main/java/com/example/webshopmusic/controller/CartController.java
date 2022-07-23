@@ -39,4 +39,6 @@ public class CartController {
         cartSession.getCartSession().get(idProduct).setQuantity(productAdd.getQuantity());
         return "redirect:/cart";
     }
+
+
 }

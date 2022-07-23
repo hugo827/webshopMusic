@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.GregorianCalendar;
 
 @Entity
-@Table(name="order")
+@Table(name="`order`")
 public class OrderEntity {
 
     @Id
@@ -16,8 +16,8 @@ public class OrderEntity {
     @Column(name="ordered_at")
     private GregorianCalendar orderedAt;
 
-    @Column(name="is_order")
-    private Boolean isOrder;
+    @Column(name="is_paid")
+    private Boolean isPaid;
 
     @JoinColumn(name="fk_customer", referencedColumnName="id_customer")
     @ManyToOne
@@ -45,12 +45,12 @@ public class OrderEntity {
         this.orderedAt = orderedAt;
     }
 
-    public Boolean getOrder() {
-        return isOrder;
+    public Boolean getIsPaid() {
+        return isPaid;
     }
 
-    public void setOrder(Boolean order) {
-        isOrder = order;
+    public void setIsPaid(Boolean isPaid) {
+        this.isPaid = isPaid;
     }
 
     public UserEntity getUser() {

@@ -14,17 +14,16 @@ import org.springframework.security.web.authentication.SavedRequestAwareAuthenti
 
 @Configuration
 @EnableWebSecurity
+@SuppressWarnings ( { "deprecation" } )
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private static final String LOGIN_REQUEST = "/login";
-
     private static final String LOGOUT_REQUEST = "/home";
-    private static final String[] AUTHORIZED_REQUESTS_ANYBODY = new String[]{"/aboutus","/home", "/home/**", "/css/**","/image/**", "/inscription", "/login", "/inscription/send", "/product/**", "/cart"};
-    //TODO: a voir si on peut.
-    private static final String[] AUTHORIZED_REQUEST_NON_AUTHENTICATED = new String[] { };
+    private static final String[] AUTHORIZED_REQUESTS_ANYBODY = new String[]{"/cart/**","/aboutus","/home", "/home/**", "/css/**","/image/**",  "/product/**", "/cart"};
+    private static final String[] AUTHORIZED_REQUEST_NON_AUTHENTICATED = new String[] { "/login", "/inscription", "/inscription/send",};
     private static final String[] AUTHORIZED_REQUESTS_ADMIN = new String[]{"/admin"};
 
-    private UserDetailsService userDetailsServiceImpl;
+    private final UserDetailsService userDetailsServiceImpl;
 
     @Autowired
     public WebSecurityConfiguration(UserDetailsService userDetailsServiceImplementation) {
@@ -41,6 +40,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests() // We define the authorization here
+                .antMatchers(AUTHORIZED_REQUEST_NON_AUTHENTICATED).anonymous()
                 .antMatchers(AUTHORIZED_REQUESTS_ADMIN).hasRole("ADMIN") // For the request to "/admin", the user needs to be an admin
                 .antMatchers(AUTHORIZED_REQUESTS_ANYBODY).permitAll() // For the request to the index page, any user has access
                 .anyRequest().authenticated() // For all the other requests, the user needs to be authenticated
@@ -49,7 +49,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .formLogin() // We define the login part here.
                 .successHandler(new SavedRequestAwareAuthenticationSuccessHandler()) // provided by spring to redirect to the last request
                 .loginPage(LOGIN_REQUEST) // We specify a login page. Otherwise spring creates one by default
-                .permitAll() // To make the login page the available for any user
+                 // To make the login page the available for any user
 
                 .and()
                 .logout() // We define the logout part here - By default : URL = "/logout"

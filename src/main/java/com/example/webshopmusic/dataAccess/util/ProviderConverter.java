@@ -1,15 +1,10 @@
 package com.example.webshopmusic.dataAccess.util;
 
-import com.example.webshopmusic.dataAccess.entity.BrandEntity;
-import com.example.webshopmusic.dataAccess.entity.InstrumentEntity;
-import com.example.webshopmusic.dataAccess.entity.TCategoryEntity;
-import com.example.webshopmusic.dataAccess.entity.UserEntity;
-import com.example.webshopmusic.model.Brand;
-import com.example.webshopmusic.model.Instrument;
-import com.example.webshopmusic.model.Tcategory;
-import com.example.webshopmusic.model.User;
+import com.example.webshopmusic.dataAccess.entity.*;
+import com.example.webshopmusic.model.*;
 import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -58,5 +53,21 @@ public class ProviderConverter {
 
     private Brand brandEntityToBrandModel(BrandEntity brandEntity) {
         return mapper.map(brandEntity, Brand.class);
+    }
+
+    public OrderEntity orderModelToOrderEntity(Order order) {
+        OrderEntity orderEntity = mapper.map(order, OrderEntity.class);
+        orderEntity.setIsPaid(order.getPaid());
+        orderEntity.setOrderedAt(order.getOrderedAt());
+        orderEntity.setUser(userModelToUserEntity(order.getUser()));
+        return orderEntity;
+    }
+
+    public Order orderEntityToOrderModel(OrderEntity orderEntity) {
+        Order order = mapper.map(orderEntity, Order.class);
+        order.setPaid(orderEntity.getIsPaid());
+        order.setOrderedAt(orderEntity.getOrderedAt());
+        order.setUser(userEntityToUserModel(orderEntity.getUser()));
+        return order;
     }
 }

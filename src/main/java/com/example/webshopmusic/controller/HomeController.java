@@ -4,16 +4,10 @@ import com.example.webshopmusic.ConstanteApp.Constante;
 import com.example.webshopmusic.dataAccess.dao.IInstrumentDataAccess;
 import com.example.webshopmusic.dataAccess.dao.ITCategoryDataAccess;
 import com.example.webshopmusic.model.CartSession;
-import com.example.webshopmusic.model.Instrument;
-import com.example.webshopmusic.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.Locale;
 
 @Controller
 @RequestMapping(value= "/home")

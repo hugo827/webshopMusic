@@ -14,7 +14,7 @@
 <body>
 <div class="form">
     <form:form method="post" modelAttribute="userModel" cssClass="login-form">
-        <form:label path="username"><spring:message code="loginLabel" /></form:label>
+        <form:label path="username" value="${usernameInscription}"><spring:message code="loginLabel" /></form:label>
         <form:input path="username" cssClass="login-input" required="required" placeholder="Enter username here"/>
         <form:errors path="username" />
         <form:label path="password"><spring:message code="passwordLabel" /></form:label>

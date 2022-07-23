@@ -21,7 +21,7 @@ CREATE TABLE `customer` (
     `email` varchar(45) UNIQUE,
     `firstname` varchar(45) not null,
     `lastname` varchar(45) not null,
-    `phone` varchar(45),
+    `phone` varchar(45) default null,
     `password` text not null,
     `postcode` int not null,
     `country` varchar(100) not null,
@@ -37,8 +37,8 @@ CREATE TABLE `customer` (
 
 CREATE TABLE `order` ( 
 	`id_order` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `ordered_at` date,
-    `is_order` boolean,
+    `ordered_at` timestamp default current_timestamp(),
+    `is_paid` boolean default false,
     `fk_customer` int not null,
     CONSTRAINT `fk_customer` FOREIGN key (`fk_customer`) REFERENCES  `customer` (`id_customer`)
 );
@@ -78,7 +78,7 @@ CREATE TABLE `instrument` (
 );
 
 CREATE TABLE `orderline` (
-	`id_orderline` int not null primary key,
+	`id_orderline` int not null auto_increment primary key,
     `price_product` double not null,
     `quantity` int not null default 1 check( `quantity` > 0),
     `percentage_discount` double check((`percentage_discount` between 0.0 AND 1.0 ) OR (`percentage_discount` = null)),

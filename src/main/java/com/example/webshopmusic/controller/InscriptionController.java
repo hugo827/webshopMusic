@@ -51,6 +51,7 @@ public class InscriptionController {
 
         if (!bindingResult.hasErrors()) {
             user = userDAO.save(user);
+            model.addAttribute("usernameInscription", user.getUsername());
             return "redirect:/login";
         }
         return "integrated:inscription";

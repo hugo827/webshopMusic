@@ -1,6 +1,7 @@
 package com.example.webshopmusic.dataAccess.entity;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name="customer")
@@ -42,6 +43,9 @@ public class UserEntity {
     private Boolean credentialsNonExpired;
     @Column(name="enabled")
     private Boolean enabled;
+
+    @OneToMany(mappedBy="user", fetch=FetchType.LAZY)
+    private Collection<OrderEntity> orderEntities;
 
     public UserEntity() {
     }
@@ -180,5 +184,13 @@ public class UserEntity {
 
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public Collection<OrderEntity> getOrderEntities() {
+        return orderEntities;
+    }
+
+    public void setOrderEntities(Collection<OrderEntity> orderEntities) {
+        this.orderEntities = orderEntities;
     }
 }

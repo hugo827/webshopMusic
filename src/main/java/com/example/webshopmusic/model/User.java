@@ -13,6 +13,8 @@ import java.util.Collection;
 import java.util.List;
 
 public class User implements UserDetails {
+
+    private int id;
     @NotNull
     @Size(min=4, max=20)
     private String username;
@@ -26,7 +28,7 @@ public class User implements UserDetails {
     private String firstname;
     @NotNull
     private String lastname;
-    private String phone;
+    private String phone = null;
     @NotNull
     private Integer postcode;
     @NotNull
@@ -43,13 +45,14 @@ public class User implements UserDetails {
     private Boolean credentialsNonExpired;
     private Boolean enabled;
 
-    public User(String username, String email, String password, String firstname, String lastname, String phone, Integer postcode, String city, String country, String number_house, String street, String authorities, Boolean accountNonExpired, Boolean accountNonLocked, Boolean credentialsNonExpired, Boolean enabled) {
+    public User(int id, String username, String email, String password, String firstname, String lastname, String phone, Integer postcode, String city, String country, String number_house, String street, String authorities, Boolean accountNonExpired, Boolean accountNonLocked, Boolean credentialsNonExpired, Boolean enabled) {
+        this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.phone = phone;
+        setPhone(phone);
         this.postcode = postcode;
         this.city = city;
         this.country = country;
@@ -63,6 +66,14 @@ public class User implements UserDetails {
     }
 
     public User() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
@@ -183,7 +194,8 @@ public class User implements UserDetails {
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        if(phone != null && phone.isEmpty()) this.phone = null;
+        else this.phone = phone;
     }
 
     public Integer getPostcode() {

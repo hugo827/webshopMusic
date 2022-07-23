@@ -1,7 +1,6 @@
 package com.example.webshopmusic.model;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class CartSession {
 

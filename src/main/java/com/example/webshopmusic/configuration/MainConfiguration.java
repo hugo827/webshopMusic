@@ -17,8 +17,7 @@ public class MainConfiguration implements WebMvcConfigurer {
 
     @Bean
     public DefaultMessageCodesResolver defaultMessageCodesResolver() {
-        DefaultMessageCodesResolver defaultMessageCodesResolver = new DefaultMessageCodesResolver();
-        return defaultMessageCodesResolver;
+        return new DefaultMessageCodesResolver();
     }
 
     @Bean
