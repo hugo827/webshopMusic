@@ -28,8 +28,8 @@
         </div>
         <div class="hn-center">
             <ul>
-                <a href = "<c:url value='/home'/>"> <li>Home</li></a>
-                <a href = "<c:url value='/aboutus'/>"> <li>About us</li></a>
+                <a href = "<c:url value='/home'/>"> <li><spring:message code="homeLabel" /></li></a>
+                <a href = "<c:url value='/aboutus'/>"> <li><spring:message code="aboutLabel" /></li></a>
             </ul>
         </div>
         <div class="hn-right">
@@ -43,8 +43,8 @@
             </div>
             <a href = "<c:url value="/cart"/>"><image class="logo" src="<spring:url value='/image/shopping-cart.png' />" /></a>
             <sec:authorize access="!isAuthenticated()">
-            <a href = "<c:url value="/inscription"/>" class="btn"> Inscription</a>
-            <a href = "<c:url value="/login"/>" class="btn"> Login</a>
+            <a href = "<c:url value="/inscription"/>" class="btn"><spring:message code="signup" /></a>
+            <a href = "<c:url value="/login"/>" class="btn"> <spring:message code="signin" /></a>
             </sec:authorize>
             <sec:authorize access="isAuthenticated()">
                 <div class="connected">

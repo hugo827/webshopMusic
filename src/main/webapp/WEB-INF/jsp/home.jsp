@@ -18,7 +18,7 @@
 <body>
 
     <div class="categories">
-        <a href="<c:url value='/home/all'/>" class="category">All</a>
+        <a href="<c:url value='/home/all'/>" class="category"><spring:message code="categoryAll" /></a>
         <c:forEach items="${listCategories}" var="u" >
             <a href="<c:url value='/home/${u.getFk_category().toLowerCase()}'/>" class="category">${u.getName()}</a>
         </c:forEach>

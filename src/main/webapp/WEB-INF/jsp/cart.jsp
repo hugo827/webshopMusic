@@ -44,8 +44,8 @@
         <div class="cart-paid">
             <h3>Details :</h3>
             <ul>
-                <li> Total products : ${totalProduct}</li>
-                <li> Total price : ${totalPrice}</li>
+                <li> <spring:message code="totalproduct" /> : ${totalProduct}</li>
+                <li> <spring:message code="totalprice" /> ${totalPrice}</li>
             </ul>
             <a class="product-page-add-btn" href="<c:url value='/order' />"><span class="product-page-add-btn-span">Order</span></a>
         </div>

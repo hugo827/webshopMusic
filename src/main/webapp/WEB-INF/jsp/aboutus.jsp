@@ -6,12 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="include/importTags.jsp" %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-  <h1>About us</h1>
+  <h1><spring:message code="aboutLabel" /></h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus porttitor fermentum. Aliquam tincidunt eros a varius laoreet. Phasellus convallis, nisl quis efficitur maximus, ipsum urna efficitur quam, eu cursus risus velit ac urna. Integer elementum molestie elit in dignissim. Donec odio lacus, fermentum a ligula ut, sagittis tristique mauris. Mauris euismod porttitor fringilla. Nulla interdum, eros in suscipit auctor, erat arcu sollicitudin nisl, in hendrerit odio erat a arcu. Curabitur congue magna eget dolor volutpat pretium. Nunc et congue mi. Vestibulum vitae ligula et purus elementum tincidunt non fringilla erat. Aliquam massa justo, faucibus vitae leo auctor, fermentum tempor elit.
 
     Nullam non nunc in enim dictum semper. Phasellus ornare velit sed purus laoreet porttitor. In consectetur at tortor nec convallis. Donec eget tortor gravida, volutpat justo nec, gravida lectus. Quisque semper porttitor lectus vel mollis. Pellentesque et nisl et elit dictum fermentum. Vestibulum facilisis dictum ex, tincidunt luctus magna pretium vel. Ut laoreet consequat tincidunt. Duis ullamcorper nibh faucibus lorem ornare auctor. Proin dignissim placerat sapien id mollis. Phasellus luctus enim ac gravida placerat. Mauris placerat eleifend tellus ac convallis. Maecenas vel urna maximus nisi efficitur condimentum at et augue.
