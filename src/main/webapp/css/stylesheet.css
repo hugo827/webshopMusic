@@ -369,14 +369,13 @@ body {
     display: flex;
 }
 .cart-line-item-info-details {
-    width: 25%;
+    width: 35%;
 }
 .cart-line-item-btn-quantity {
     text-align: center;
     width: 75%;
     padding-top: 10%;
 }
-
 
 
 .btn-details {
@@ -416,4 +415,30 @@ body {
 
 .btn-details:hover .product-page-add-btn-span {
     background: transparent;
+}
+
+
+.promotion {
+    position: absolute;
+    z-index: 99;
+    background-image: linear-gradient(to right, #ef60fc 0%, #ae67e7 100%);;
+    color: black;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 26px;
+    font-weight: bold;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+.promotion span {
+    font-size: 32px;
+    font-weight: bolder;
+}
+
+.reduc-price {
+    text-decoration: line-through;
+}
+.reduc-price-calc {
+    color: red;
 }

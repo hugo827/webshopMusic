@@ -44,7 +44,7 @@ public class ProductController {
     public String post(@ModelAttribute(value="productAdd") ProductAdd productAdd, @ModelAttribute(value = Constante.CURRENT_CART) CartSession cartSession, final BindingResult bindingResult, Model model) {
         if (!bindingResult.hasErrors()) {
             cartSession.addInstrument(this.productAdd.getInstrument().getId(), this.productAdd.getInstrument(), productAdd.getQuantity());
-            return "redirect:/home";
+            return "redirect:/cart";
         }
         return "integrated:product";
     }

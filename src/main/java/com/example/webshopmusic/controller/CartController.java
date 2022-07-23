@@ -17,13 +17,17 @@ public class CartController {
     public String get (Model model, @ModelAttribute(value=Constante.CURRENT_CART) CartSession cartSession) {
         double totalPrice = 0.0;
         int totalProduct = 0;
+        double totalReduc = 0.0;
         for(CartItem cartItem : cartSession.getCartSession().values()) {
             totalProduct += cartItem.getQuantity();
             totalPrice += cartItem.getInstrument().getPrice() * cartItem.getQuantity();
+            totalReduc += cartItem.getInstrument().getPrice() * cartItem.getQuantity() * cartItem.getInstrument().getDiscount().getPercentageDiscount();
         }
         model.addAttribute("productAdd", new ProductAdd());
         model.addAttribute("totalProduct", totalProduct);
         model.addAttribute("totalPrice", totalPrice);
+        model.addAttribute("totalReduc", totalReduc);
+        model.addAttribute("total", totalPrice - totalReduc);
         model.addAttribute("cartList", cartSession.getCartSession());
         return "integrated:cart";
     }

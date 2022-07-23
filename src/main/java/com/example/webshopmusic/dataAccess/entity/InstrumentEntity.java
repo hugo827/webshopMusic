@@ -79,4 +79,20 @@ public class InstrumentEntity {
     public void setFkBrand(BrandEntity fkBrand) {
         this.fkBrand = fkBrand;
     }
+
+    public Collection<DiscountEntity> getDiscounts() {
+        return discounts;
+    }
+
+    public void setDiscounts(Collection<DiscountEntity> discounts) {
+        this.discounts = discounts;
+    }
+
+    public Collection<OrderLineEntity> getOrderLines() {
+        return orderLines;
+    }
+
+    public void setOrderLines(Collection<OrderLineEntity> orderLines) {
+        this.orderLines = orderLines;
+    }
 }

@@ -38,7 +38,7 @@ public class OrderDAO implements IOrderDataAccess {
             orderLineEntity.setInstrument(providerConverter.instrumentModelToInstrumentEntity(c.getInstrument()));
             orderLineEntity.setQuantity(c.getQuantity());
             orderLineEntity.setPriceProduct(c.getInstrument().getPrice());
-            orderLineEntity.setPercentageQuantity(0.0);
+            orderLineEntity.setPercentageQuantity(c.getInstrument().getDiscount().getPercentageDiscount());
             orderLineEntity = iOrderLineRepository.save(orderLineEntity);
         }
 

@@ -70,4 +70,12 @@ public class ProviderConverter {
         order.setUser(userEntityToUserModel(orderEntity.getUser()));
         return order;
     }
+
+    public Discount discountEntityToDiscountModel(DiscountEntity discountEntity) {
+        Discount discount = mapper.map(discountEntity, Discount.class);
+        discount.setPercentageDiscount(discountEntity.getPercentageDiscount());
+        discount.setEndAt(discountEntity.getEndAt());
+        discount.setStartAt(discountEntity.getStartAt());
+        return discount;
+    }
 }

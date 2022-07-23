@@ -7,8 +7,8 @@ public class Instrument {
     private String description;
     private double price;
     private String fkCategory;
-
     private Brand brand;
+    private Discount discount;
 
     public Instrument() {
     }
@@ -60,4 +60,13 @@ public class Instrument {
     public void setBrand(Brand brand) {
         this.brand = brand;
     }
+
+    public Discount getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Discount discount) {
+        this.discount = discount;
+    }
 }
+
